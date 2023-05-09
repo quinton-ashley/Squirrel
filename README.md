@@ -2,6 +2,8 @@
 
 Art made by @axiom.split using p5play!
 
+https://quinton-ashley.github.io/Squirrel/Code/index.html
+
 ## Attribution
 
 Squirrel: Elthen (https://elthen.itch.io/2d-pixel-art-squirrel-sprites?download) Elthen on Patreon: (https://www.patreon.com/posts/27430241) License: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
