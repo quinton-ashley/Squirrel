@@ -1,9 +1,6 @@
-'use strict';
-
 let squirrel, birds, ground, moss1, moss2, plants, acorn, backgroundBack, backgroundFar, backgroundMiddle;
 
 function preload() {
-	//Background Tiles
 	//Back-Background
 	backgroundBack = new Group();
 	backgroundBack.addImg('backgroundBack', '../Sprites/Background/Back.png');
@@ -56,7 +53,7 @@ function preload() {
 
 	squirrel = new Sprite(200, 10, 30, 45);
 
-	//Right-Side Squirrel Sprites
+	//Right-Side Squirrel Sprites, list mode animation loading
 	squirrel.addAni('IdleR', '../Sprites/Squirrel/IdleR1.png', 6);
 	squirrel.addAni('Idle2R', '../Sprites/Squirrel/Idle2R1.png', 6);
 	squirrel.addAni('RunR', '../Sprites/Squirrel/RunR1.png', 8);
@@ -83,13 +80,19 @@ function preload() {
 	squirrel.shocked = false;
 	squirrel.shockedCount = 10;
 
-	//Birds
+	// Birds
 	birds = new Group();
-	birds.addAni('Robin', '../Sprites/Birds/Robin.png', { frameSize: [32, 32], frames: 3 });
-	birds.addAni('Bluejay', '../Sprites/Birds/Bluejay.png', { frameSize: [32, 32], frames: 3 });
-	birds.addAni('Sparrow', '../Sprites/Birds/Sparrow.png', { frameSize: [32, 32], frames: 3 });
+	birds.x = () => round(random(500, 1500));
+	birds.y = () => round(random(30, 150));
+	birds.w = 32;
+	birds.h = 32;
 	birds.collider = 'none';
-	birds.speed = -2;
+	// load spritesheet animations for the birds
+	birds.addAni('Robin', '../Sprites/Birds/Robin.png', { frames: 3 });
+	birds.addAni('Bluejay', '../Sprites/Birds/Bluejay.png', { frames: 3 });
+	birds.addAni('Sparrow', '../Sprites/Birds/Sparrow.png', { frames: 3 });
+	birds.anis.frameDelay = 10;
+	birds.vel.x = -2;
 }
 
 function setup() {
@@ -99,25 +102,39 @@ function setup() {
 	world.gravity.y = 7;
 
 	//Generate the Background-Back-Tiles
-	for (let i = -5000; i <= 5000; i += 143) new backgroundBack.Sprite(i, 120);
+	for (let i = -5000; i <= 5000; i += 143) {
+		new backgroundBack.Sprite(i, 120);
+	}
 	//Generate the Background-Far-Tiles
-	for (let i = -5000; i <= 5000; i += 176) new backgroundFar.Sprite(i, 120);
+	for (let i = -5000; i <= 5000; i += 176) {
+		new backgroundFar.Sprite(i, 120);
+	}
 	//Generate the Background-Middle-Tiles
-	for (let i = -5000; i <= 5000; i += random(50, 300)) new backgroundMiddle.Sprite(i, 120);
+	for (let i = -5000; i <= 5000; i += random(50, 300)) {
+		new backgroundMiddle.Sprite(i, 120);
+	}
 
 	//Generate the Ground-Tiles
-	for (let i = -5000; i <= 5000; i += 48) new ground.Sprite(i, 264);
+	for (let i = -5000; i <= 5000; i += 48) {
+		new ground.Sprite(i, 264);
+	}
 
 	//Generate the Moss-Tiles
-	for (let i = -5000; i <= 5000; i += 15) new moss1.Sprite(i + floor(random(-100, 100)), floor(random(240, 300)));
-	for (let i = -5000; i <= 5000; i += 15) new moss2.Sprite(i + floor(random(-100, 100)), floor(random(240, 300)));
-
+	for (let i = -5000; i <= 5000; i += 15) {
+		new moss1.Sprite(i + floor(random(-100, 100)), floor(random(240, 300)));
+	}
+	for (let i = -5000; i <= 5000; i += 15) {
+		new moss2.Sprite(i + floor(random(-100, 100)), floor(random(240, 300)));
+	}
 	//Generate the Plant-Tiles
-	for (let i = -5000; i <= 5000; i += random(20, 200)) new plants.Sprite(i, 230);
+	for (let i = -5000; i <= 5000; i += random(20, 200)) {
+		new plants.Sprite(i, 230);
+	}
 }
 
 function draw() {
 	clear();
+
 	handleAcorns();
 	squirrelBehavior();
 	handleBirds();

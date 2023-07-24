@@ -4,6 +4,10 @@ Art made by @axiom.split using p5play!
 
 https://quinton-ashley.github.io/Squirrel/Code/index.html
 
+### Edited on July 24, 2023
+
+Since v3.9 of p5play, setting `sprite.speed` to a negative value reverses the direction of the sprite. I updated this Squirrel project so that sprites' and groups' `vel.x` is changed instead of `speed` in the `WorldAnimation.js` file.
+
 ## Attribution
 
 Squirrel: Elthen (https://elthen.itch.io/2d-pixel-art-squirrel-sprites?download) Elthen on Patreon: (https://www.patreon.com/posts/27430241) License: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
