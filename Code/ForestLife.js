@@ -3,26 +3,26 @@ let squirrel, birds, ground, moss1, moss2, plants, acorn, backgroundBack, backgr
 function preload() {
 	//Back-Background
 	backgroundBack = new Group();
-	backgroundBack.addImg('backgroundBack', '../Sprites/Background/Back.png');
+	backgroundBack.addAni('backgroundBack', '../Sprites/Background/Back.png');
 	backgroundBack.collider = 'none';
 	backgroundBack.w = 144;
 	backgroundBack.layer = 1;
 	//Far-Background
 	backgroundFar = new Group();
-	backgroundFar.addImg('backgroundFar', '../Sprites/Background/Far.png');
+	backgroundFar.addAni('backgroundFar', '../Sprites/Background/Far.png');
 	backgroundFar.collider = 'none';
 	backgroundFar.w = 176;
 	backgroundFar.layer = 2;
 	//Middle-Background
 	backgroundMiddle = new Group();
-	backgroundMiddle.addImg('backgroundMiddle', '../Sprites/Background/Middle.png');
+	backgroundMiddle.addAni('backgroundMiddle', '../Sprites/Background/Middle.png');
 	backgroundMiddle.collider = 'none';
 	backgroundMiddle.w = 192;
 	backgroundMiddle.layer = 3;
 
 	//Ground-Sprites
 	ground = new Group();
-	ground.addImg('ground', '../Sprites/Tiles/Ground.png');
+	ground.addAni('ground', '../Sprites/Tiles/Ground.png');
 	ground.collider = 'kinematic';
 	ground.w = 48;
 	ground.h = 48;
@@ -30,14 +30,14 @@ function preload() {
 
 	//Moss1-Sprites
 	moss1 = new Group();
-	moss1.addImg('moss1', '../Sprites/Plants/Moss1.png');
+	moss1.addAni('moss1', '../Sprites/Plants/Moss1.png');
 	moss1.collider = 'none';
 	moss1.w = 27;
 	moss1.h = 19;
 	moss1.layer = 5;
 	//Moss2-Sprites
 	moss2 = new Group();
-	moss2.addImg('moss2', '../Sprites/Plants/Moss2.png');
+	moss2.addAni('moss2', '../Sprites/Plants/Moss2.png');
 	moss2.collider = 'none';
 	moss2.w = 27;
 	moss2.h = 19;
@@ -45,7 +45,7 @@ function preload() {
 
 	//Plant-Sprites
 	plants = new Group();
-	plants.addImg('moss1', '../Sprites/Plants/Plant.png');
+	plants.addAni('moss1', '../Sprites/Plants/Plant.png');
 	plants.collider = 'none';
 	plants.w = 42;
 	plants.h = 27;
